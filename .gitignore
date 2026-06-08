@@ -1,0 +1,18 @@
+# Nix build outputs
+result
+result-*
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Secrets
+*.pem
+*.key
+id_rsa*
+
+# macOS
+.DS_Store
