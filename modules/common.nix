@@ -40,7 +40,7 @@
 
   environment.systemPackages = with pkgs; [
    git
-   neowofetch
+   hyfetch
   ];
 
   # Enable OpenSSH server with secure settings
