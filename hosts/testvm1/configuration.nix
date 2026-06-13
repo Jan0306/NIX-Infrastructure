@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+    hosts = import ../../lib/hosts.nix;
+    host = hosts.testvm1;
+  in
 {
   imports =
     [
@@ -8,20 +12,15 @@
       ../../modules/users.nix
       ../../../hosts.nix
     ];
-
-  let
-    hosts = import ../../lib/hosts.nix;
-    host = hosts.testvm1;
-  in {
-    networking.hostName = host.hostname;
-    interfaces.enp0s3.useDHCP = false;
-    networking.interfaces.enp0s3.ipv4.addresses = [
-      {
-        address = host.ip;
-        prefixLength = 24;
-      }
-    ];
-  }
+    
+  networking.hostName = host.hostname;
+  interfaces.enp0s3.useDHCP = false;
+  networking.interfaces.enp0s3.ipv4.addresses = [
+    {
+      address = host.ip;
+      prefixLength = 24;
+    }
+  ];
 
   services.qemuGuest.enable = true;
 
