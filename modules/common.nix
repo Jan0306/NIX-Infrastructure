@@ -10,10 +10,11 @@
     nameservers = [ "192.168.1.1" "8.8.8.8" ];
   };
   
-  # Set the system time zone and locale settings
+  # Set system time zone
   time.timeZone = "Europe/Berlin";
-  i18n.defaultLocale = "de_DE.UTF-8";
 
+  # Set default locale
+  i18n.defaultLocale = "de_DE.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_DE.UTF-8";
     LC_IDENTIFICATION = "de_DE.UTF-8";
@@ -38,6 +39,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  # Installing system packages
   environment.systemPackages = with pkgs; [
    git
    hyfetch
