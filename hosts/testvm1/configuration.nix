@@ -10,9 +10,8 @@ let
       ./hardware-configuration.nix
       ../../modules/common.nix
       ../../modules/users.nix
-      ../../../hosts.nix
     ];
-    
+
   networking.hostName = host.hostname;
   interfaces.enp0s3.useDHCP = false;
   networking.interfaces.enp0s3.ipv4.addresses = [
