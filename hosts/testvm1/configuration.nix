@@ -1,9 +1,9 @@
 { config, pkgs, ... }:
 
 let
-    hosts = import ../../lib/hosts.nix;
-    host = hosts.testvm1;
-  in
+  hosts = import ../../lib/hosts.nix;
+  host = hosts.testvm1;
+in
 {
   imports =
     [
@@ -13,8 +13,8 @@ let
     ];
 
   networking.hostName = host.hostname;
-  networking.interfaces.enp0s3.useDHCP = false;
-  networking.interfaces.enp0s3.ipv4.addresses = [
+  networking.interfaces.ens18.useDHCP = false;
+  networking.interfaces.ens18.ipv4.addresses = [
     {
       address = host.ip;
       prefixLength = 24;
