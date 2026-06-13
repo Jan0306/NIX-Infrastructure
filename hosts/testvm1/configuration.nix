@@ -7,6 +7,8 @@
       ../../modules/common.nix
       ../../modules/users.nix
     ];
+  
+  services.qemuGuest.enable = true;
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sda";
@@ -15,7 +17,6 @@
   networking.hostName = "testvm1";
 
   environment.systemPackages = with pkgs; [
-   
   ];
 
   system.stateVersion = "26.05";
