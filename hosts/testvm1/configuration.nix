@@ -13,7 +13,7 @@ let
     ];
 
   networking.hostName = host.hostname;
-  interfaces.enp0s3.useDHCP = false;
+  networking.interfaces.enp0s3.useDHCP = false;
   networking.interfaces.enp0s3.ipv4.addresses = [
     {
       address = host.ip;
