@@ -3,7 +3,10 @@
 {
   time.timeZone = "Europe/Berlin";
   services.openssh.enable = true;
-  
+  services.openssh.passwordAuthentication = false;
+  services.openssh.permitRootLogin = "no";
+
+
   networking.networkmanager.enable = true;
   
   i18n.defaultLocale = "de_DE.UTF-8";
