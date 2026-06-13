@@ -1,14 +1,17 @@
 { config, pkgs, ... }:
 
 {
-  time.timeZone = "Europe/Berlin";
-  services.openssh.enable = true;
-  services.openssh.settings.PasswordAuthentication = false;
-  services.openssh.settings.PermitRootLogin = "no";
-
-
+  # Enable NetworkManager for network configuration
   networking.networkmanager.enable = true;
+
+  #  Set the default gateway and DNS nameservers
+  networking = {
+    defaultGateway = "192.168.1.1";
+    nameservers = [ "192.168.1.1" "8.8.8.8" ];
+  };
   
+  # Set the system time zone and locale settings
+  time.timeZone = "Europe/Berlin";
   i18n.defaultLocale = "de_DE.UTF-8";
 
   i18n.extraLocaleSettings = {
@@ -38,4 +41,9 @@
   environment.systemPackages = with pkgs; [
    git
   ];
+
+  # Enable OpenSSH server with secure settings
+  services.openssh.enable = true;
+  services.openssh.settings.PasswordAuthentication = false;
+  services.openssh.settings.PermitRootLogin = "no";
 }
