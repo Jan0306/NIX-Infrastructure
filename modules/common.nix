@@ -40,13 +40,11 @@
 
   environment.systemPackages = with pkgs; [
    git
+   neofetch
   ];
 
   # Enable OpenSSH server with secure settings
   services.openssh.enable = true;
   services.openssh.settings.PasswordAuthentication = false;
   services.openssh.settings.PermitRootLogin = "no";
-
-  # Enable Neofetch for system information display
-  services.neofetch.enable = true;
 }
