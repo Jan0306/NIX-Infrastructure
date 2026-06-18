@@ -11,7 +11,7 @@ in
       ../../modules/common.nix
       ../../modules/users.nix
     ];
-
+    
   hardware.firmware = [
     (pkgs.stdenvNoCC.mkDerivation (final: {
       name = "brcm-firmware";
