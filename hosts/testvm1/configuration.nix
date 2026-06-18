@@ -2,7 +2,7 @@
 
 let
   hosts = import ../../lib/hosts.nix;
-  host = hosts.testvm1;
+  host = hosts.servers.testvm1;
 in
 {
   imports =

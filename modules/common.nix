@@ -35,8 +35,9 @@
 
   # Installing system packages
   environment.systemPackages = with pkgs; [
-   git
-   hyfetch
+    git
+    hyfetch
+    htop
   ];
 
   # Enable OpenSSH server with secure settings
