@@ -21,6 +21,15 @@ in
     }
   ];
 
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "de";
+    variant = "";
+  };
+
+  # Configure console keymap
+  console.keyMap = "de";
+
   #  Set the default gateway and DNS nameservers
   networking = {
     defaultGateway = "192.168.1.1";
