@@ -25,14 +25,28 @@ in
     }))
   ];
 
+  hardware.enableRedistributableFirmware = true;
+
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+
+  services.blueman.enable = true;
+
   networking.hostName = host.hostname;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [
+    "brcmfmac"
+    "btusb"
+  ];
+
+  # Wichtig für BCM4377 Stabilität
+  boot.kernelParams = [
+    "pcie_aspm=off"
+  ];
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
