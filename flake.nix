@@ -21,8 +21,6 @@
           ./hosts/macbookair/configuration.nix
           ./hosts/macbookair/hardware-configuration.nix
 
-          ./modules/hosts/macbook.nix
-
           nixos-hardware.nixosModules.apple-t2
         ];
       };
