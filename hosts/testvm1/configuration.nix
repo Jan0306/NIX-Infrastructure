@@ -21,6 +21,12 @@ in
     }
   ];
 
+  #  Set the default gateway and DNS nameservers
+  networking = {
+    defaultGateway = "192.168.1.1";
+    nameservers = [ "192.168.1.1" "8.8.8.8" ];
+  };
+
   services.qemuGuest.enable = true;
 
   boot.loader.grub.enable = true;

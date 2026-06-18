@@ -3,12 +3,6 @@
 {
   # Enable NetworkManager for network configuration
   networking.networkmanager.enable = true;
-
-  #  Set the default gateway and DNS nameservers
-  networking = {
-    defaultGateway = "192.168.1.1";
-    nameservers = [ "192.168.1.1" "8.8.8.8" ];
-  };
   
   # Set system time zone
   time.timeZone = "Europe/Berlin";
