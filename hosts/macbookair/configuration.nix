@@ -87,9 +87,11 @@ in
     #media-session.enable = true;
   };
 
+  # System Packages
   environment.systemPackages = with pkgs; [
     vscodium
     brave
+    onlyoffice-desktopeditors
     ];
 
   system.stateVersion = "26.05";
