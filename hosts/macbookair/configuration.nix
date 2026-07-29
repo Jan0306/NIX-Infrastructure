@@ -27,12 +27,13 @@ in
 
   hardware.enableRedistributableFirmware = true;
 
+  # Network
+  networking.hostName = host.hostname;
+
+  # Bluetooth
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
-
   services.blueman.enable = true;
-
-  networking.hostName = host.hostname;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -85,6 +86,11 @@ in
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    vscodium
+    brave
+    ];
 
   system.stateVersion = "26.05";
 }
