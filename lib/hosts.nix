@@ -9,5 +9,8 @@
     macbookair = {
       hostname = "macbookair";
     };
+    t480 = {
+      hostname = "t480";
+    };
   };
 }
