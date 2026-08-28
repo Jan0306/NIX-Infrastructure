@@ -2,6 +2,8 @@
   description = "NIX Infrastructure";
 
   inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
       inputs.nixpkgs.follows = "nixpkgs";
