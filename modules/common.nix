@@ -3,12 +3,8 @@
 {
   # Enable NetworkManager for network configuration
   networking.networkmanager.enable = true;
-  
-  # Set system time zone
-  time.timeZone = "Europe/Berlin";
 
   # Set default locale
-  i18n.defaultLocale = "de_DE.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "de_DE.UTF-8";
     LC_IDENTIFICATION = "de_DE.UTF-8";
@@ -21,15 +17,13 @@
     LC_TIME = "de_DE.UTF-8";
   };
 
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Installing system packages
-  environment.systemPackages = with pkgs; [
-    git
-    hyfetch
-    htop
-  ];
 
   # Enable OpenSSH server with secure settings
   services.openssh.enable = true;

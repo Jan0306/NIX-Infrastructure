@@ -5,12 +5,9 @@ let
   host = hosts.servers.testvm1;
 in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../modules/common.nix
-      ../../modules/users.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   networking.hostName = host.hostname;
   networking.interfaces.ens18.useDHCP = false;
