@@ -25,4 +25,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    brave
+    alacritty
+    onlyoffice-desktopeditors
+  ];
+
 }

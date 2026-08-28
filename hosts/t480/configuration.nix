@@ -17,8 +17,7 @@ in
   services.libinput.touchpad.naturalScrolling = true;
 
   environment.systemPackages = with pkgs; [
-    brave
-    alacritty
+    
   ];
 
   system.stateVersion = "26.05";

@@ -24,15 +24,10 @@ in
 
   hardware.enableRedistributableFirmware = true;
 
-  # Network
   networking.hostName = host.hostname;
 
-  # Bluetooth
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
   services.blueman.enable = true;
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -41,19 +36,13 @@ in
     "btusb"
   ];
 
-  # Wichtig für BCM4377 Stabilität
   boot.kernelParams = [
     "pcie_aspm=off"
   ];
 
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # System Packages
   environment.systemPackages = with pkgs; [
-    vscodium
-    brave
-    onlyoffice-desktopeditors
-    ];
+    
+  ];
 
   system.stateVersion = "26.05";
 }
