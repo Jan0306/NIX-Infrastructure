@@ -10,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }:
+  outputs = { nixpkgs, nixos-hardware, ... }:
   let
     lib = nixpkgs.lib;
   in {

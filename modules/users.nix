@@ -1,11 +1,14 @@
-{ pkgs, ... }:
+{ ... }:
 
 {
   users.users.jan = {
     isNormalUser = true;
     description = "Jan";
-    extraGroups = [ "wheel" ];
-    packages = with pkgs; [];
+
+    extraGroups = [
+      "wheel"
+    ];
+
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGWN+/adzSEbOxFsIiGQOsfiPhFoiH+5gUj34KTZ2QpB jan@macbookpro"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIux+C3peLKR0RlApmkn8U2VFjvObdW18n6BuDiYObuY jan@pc"

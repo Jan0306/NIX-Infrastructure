@@ -1,8 +1,6 @@
 { ... }:
 
 {
-  i18n.defaultLocale = "de_DE.UTF-8";
-
   networking.networkmanager.enable = true;
 
   hardware.bluetooth.enable = true;
@@ -11,4 +9,6 @@
   users.users.jan.extraGroups = [
     "networkmanager"
   ];
+
+  i18n.defaultLocale = "de_DE.UTF-8";
 }
