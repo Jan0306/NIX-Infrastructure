@@ -4,7 +4,7 @@
   users.users.jan = {
     isNormalUser = true;
     description = "Jan";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "wheel" ];
     packages = with pkgs; [];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGWN+/adzSEbOxFsIiGQOsfiPhFoiH+5gUj34KTZ2QpB jan@macbookpro"
