@@ -29,7 +29,9 @@
   environment.systemPackages = with pkgs; [
     brave
     alacritty
+    obsidian
     onlyoffice-desktopeditors
+    wireguard-tools
   ];
 
 }
